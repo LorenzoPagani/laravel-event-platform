@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
@@ -13,6 +14,8 @@ class EventController extends Controller
      */
     public function index()
     {
+        $events = Event::all();
+        return view('admin.events.index', compact('events'));
     }
 
     /**
@@ -20,7 +23,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.events.create');
     }
 
     /**
@@ -28,7 +31,9 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        //
+        $new_event = new Event;
+        $new_event->fill($request->all());
+        $new_event->save();
     }
 
     /**
