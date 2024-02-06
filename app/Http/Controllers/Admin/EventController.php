@@ -34,6 +34,7 @@ class EventController extends Controller
         $new_event = new Event;
         $new_event->fill($request->all());
         $new_event->save();
+        return redirect()->route('admin.events.index');
     }
 
     /**
@@ -41,7 +42,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view('admin.events.show', compact('event'));
     }
 
     /**
@@ -65,6 +66,8 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+
+        $event->delete();
+        return redirect()->route('admin.events.index');
     }
 }
