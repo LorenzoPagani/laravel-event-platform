@@ -15,7 +15,7 @@
                 <form action="{{ route('admin.events.destroy', $event->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" value="elimina">
+                    <input type="submit" value="elimina" class="btn btn-primary">
                 </form>
             @endforeach
         </div>

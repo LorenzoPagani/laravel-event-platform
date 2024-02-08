@@ -6,4 +6,8 @@
         <input type="number" name="user_id" placeholder="user">
         <button type="submit">Create</button>
     </form>
+    @foreach ($tags as $tag)
+        <input type="checkbox" name="tags[]" value="{{ $tag->id }}">
+        <label for="">{{ $tag->name }}</label>
+    @endforeach
 @endsection
