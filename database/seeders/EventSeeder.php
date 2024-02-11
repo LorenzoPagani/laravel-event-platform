@@ -16,7 +16,7 @@ class EventSeeder extends Seeder
         $events = [
             [
                 'name' => 'Laravel Event',
-                'user_id' => 1,
+                'user_id' => 2,
             ],
             [
                 'name' => 'Vue.js Event',
@@ -24,7 +24,7 @@ class EventSeeder extends Seeder
             ],
             [
                 'name' => 'React Event',
-                'user_id' => 1,
+                'user_id' => 3,
             ],
         ];
         foreach ($events as $event) {
